@@ -1,0 +1,655 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* Colors */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* Transition */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+/* --- Main body --- */
+body {
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    margin: 0;
+}
+
+body.dark {
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;  
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+.sidebar.close .nav-link .genre-icon {
+    display: none;
+}
+
+.sidebar li {
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar .icon {
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.sidebar .icon, .sidebar .genre-icon {
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sidebar .text,
+.sidebar .icon {
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sidebar .text {
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar header .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+header .image-text .name {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header .image-text .profession {
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color);
+}
+
+.sidebar.close .toggle {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu {
+    margin-top: 40px;
+}
+
+.sidebar li.search-box {
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.sidebar li.search-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+
+.sidebar li a {
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover {
+    background-color: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.menu-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .menu-bar .mode {
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.menu-bar .mode .sun-moon {
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i {
+    position: absolute;
+}
+
+.mode .sun-moon i.sun {
+    opacity: 0;
+}
+
+body.dark .mode .sun-moon i.sun {
+    opacity: 1;
+}
+
+body.dark .mode .sun-moon i.moon {
+    opacity: 0;
+}
+
+/* Dark theme for genre dropdown in dark mode */
+body.dark #genre {
+    background-color: #3a3b3c; /* Set the background color for dark mode */
+    color: #fff; /* Set the text color for dark mode */
+    border: 1px solid #fff; /* Set the border color for dark mode */
+}
+
+body.dark #genre option {
+    background-color: #3a3b3c; /* Set the background color for dropdown options in dark mode */
+    color: #fff; /* Set the text color for dropdown options in dark mode */
+}
+
+/* Dark theme for genre icon in dark mode */
+body.dark .genre-icon {
+    color: #fff; /* Set the color for genre icon in dark mode */
+}
+
+.menu-bar .bottom-content .toggle-switch {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+    left: 20px;
+}
+
+.home {
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    margin-bottom: 120px;
+}
+
+.home .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home {
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+
+body.dark .home .text {
+    color: var(--text-color);
+}
+
+/* --- Movies / TV card --- */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.movie img {
+    width: 100%;
+}
+
+.movie-info {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    background-color: #000;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green {
+    color: lightgreen;
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+.overview {
+    background-color: #fff;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
+
+/* --- Pagination --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.pagination-btn:hover,
+.current-page:hover {
+    background-color: #fff;
+    color: #36454F;
+}
+
+.pagination-btn.disabled {
+    pointer-events: none;
+    background-color: #555; 
+    cursor: default;
+}
+
+.pagination-btn.disabled:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.current-page {
+    background-color: #fff;
+    color: #36454F;
+    border: none;
+}
+
+.no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    color: #000;
+    font-size: 14px;
+}
+
+/* --- Back To Top button --- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: var(--primary-color);
+    color: var(--toggle-color);
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .back-to-top-btn:hover {
+    background-color: #fff;
+    color: #36454F;
+  }  
+
+
+  .sidebar .nav-links li .sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #1d1b31;
+    display: none;
+  }
+  .sidebar .nav-links li.showMenu .sub-menu{
+    display: block;
+  }
+  .sidebar .nav-links li .sub-menu a{
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  .sidebar .nav-links li .sub-menu a:hover{
+    opacity: 1;
+  }
+  .sidebar.close .nav-links li .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+  }
+  .sidebar.close .nav-links li:hover .sub-menu{
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+  }
+  .sidebar .nav-links li .sub-menu .link_name{
+    display: none;
+  }
+  .sidebar.close .nav-links li .sub-menu .link_name{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+  }
+  .sidebar .nav-links li .sub-menu.blank{
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar .nav-links li:hover .sub-menu.blank{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+/* Popup Styles */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark background for the popup container */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    position: relative;
+    background: var(--body-color); /* Use your variable for body background color */
+    color: var(--text-color); /* Use your variable for text color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button styles */
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    background-color: var(--primary-color); /* Background color */
+    border-radius: 50%; /* Make it a circle */
+    padding: 8px; /* Adjust padding for size */
+    transition: var(--tran-03);
+}
+
+#close-popup:hover {
+    background-color: #fff;
+    color: #36454F;
+}
+
+/* Sticky Button Styles */
+.sticky-button {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: var(--toggle-color);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    width: 40px; /* Set the width to make it square */
+    height: 40px; /* Set the height to make it square */
+    z-index: 101; /* Ensure it's above the sidebar */
+    transition: background-color 0.3s ease-in-out;
+    display: flex; /* Center the icon vertically */
+    align-items: center; /* Center the icon vertically */
+}
+
+.sticky-button:hover {
+    background-color: #fff;
+    color: #36454F;
+}
+
+/* Sticky Image Popup Styles */
+.sticky-image-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--body-color); /* Dark background for the popup container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure it's above the sidebar and sticky button */
+}
+
+.sticky-image-popup img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.close-sticky-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    background-color: var(--primary-color); /* Background color */
+    border-radius: 50%; /* Make it a circle */
+    width: 40px; /* Equal width and height */
+    height: 40px; /* Equal width and height */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 8px; /* Adjust padding for size */
+    transition: var(--tran-03);
+}
+
+.close-sticky-image:hover {
+    background-color: #fff;
+    color: #36454F;
+}
+

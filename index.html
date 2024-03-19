@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--- CSS --->
+    <link rel="stylesheet" href="css/index.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>    
+    
+    <title>Bishi-Bashi │ Home </title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav class="sidebar close">
+        <header>
+            <!-- Logo -->
+            <div class="image-text">
+                <span class="image">
+                    <img src="img/logo.png" alt="logo">
+                </span>
+
+                <!-- Sidebar titles -->
+                <div class="text logo-text">
+                    <span class="name">Bishi-Bashi</span>
+                    <span class="profession">Mobile Cinema</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                    <!-- Search box -->
+                    <form id="form">
+                        <li class="search-box">
+                        <i class='bx bx-search icon'></i>
+                        <input type="text" id="search" class="search" placeholder="Search">
+                        </li>
+                    </form>
+
+                    <ul class="menu-links">
+                        <!-- Menu: Home -->
+                        <li class="nav-link">
+                            <a href="index.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                            </a>
+                        </li>
+
+                        <!-- Menu: Genre -->
+                        <li class="nav-link">
+                            <i class='bx bx-category-alt genre-icon'></i>
+                            <!-- Dynamic drop-down -->
+                            <select id="genre" class="text nav-text">
+                                <option value="action">Action</option>
+                                <option value="drama">Drama</option>
+                                <!-- Add more genre options as needed -->
+                            </select>      
+                        </li>
+                    </ul>
+             </div>
+
+                        <div class="bottom-content">
+
+                            <li class="">
+                                <a href="login.html">
+                                    <i class='bx bx-log-out icon' ></i>
+                                    <span class="text nav-text">Logout</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="settings.html">
+                                    <i class='bx bx-cog icon'></i>
+                                    <span class="text nav-text">Settings</span>
+                                </a>
+                            </li>
+
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+
+                                    <span class="mode-text text">Dark mode</span>
+                            
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li> 
+                </div>
+        </div>
+    </nav>
+
+    <section class="home">
+            <!-- Page header title -->
+            <div class="text">Home</div>
+            
+            <!-- Main container -->
+            <main id="main">
+            </main>
+
+            <!-- Pagination container -->
+            <div id="pagination" class="pagination">
+            </div>
+
+            <!-- Popup for Trailer Video -->
+            <div class="popup-container" id="popup-container">
+                <div class="popup">
+                <iframe id="video-frame" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                <div id="close-popup" class="bx bx-x"></div>
+                </div>
+            </div>
+
+            <!-- Back to top -->
+            <button id="back-to-top-btn" class="back-to-top-btn" title="Go to top">&#9650;</button>
+            </section>
+
+            <!-- Sticky Button -->
+            <div class="sticky-button" id="stickyButton">
+                <i class='bx bx-user-circle icon'></i>
+            </div>
+
+            <!-- Sticky Image Popup -->
+            <div class="sticky-image-popup" id="stickyImagePopup">
+                <img src="img/montage.png" alt="Montage Image">
+                <div class="close-sticky-image" id="closeStickyImage">
+                    <i class="bx bx-x"></i>
+                </div>
+            </div>
+
+
+    <!-- JS scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>

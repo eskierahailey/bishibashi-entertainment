@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--- CSS --->
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    
+    <title>Bishi-Bashi │ Settings</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav class="sidebar close">
+        <header>
+            <!-- Logo -->
+            <div class="image-text">
+                <span class="image">
+                    <img src="img/logo.png" alt="logo">
+                </span>
+
+                <!-- Sidebar titles -->
+                <div class="text logo-text">
+                    <span class="name">Bishi-Bashi</span>
+                    <span class="profession">Mobile Cinema</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                    <!-- Search box -->
+                    <form id="form">
+                        <li class="search-box">
+                        <i class='bx bx-search icon'></i>
+                        <input type="text" id="search" class="search" placeholder="Search">
+                        </li>
+                    </form>
+
+                    <ul class="menu-links">
+                        <!-- Menu: Home -->
+                        <li class="nav-link">
+                            <a href="index.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                            </a>
+                        </li>
+
+                    </ul>
+             </div>
+
+                        <div class="bottom-content">
+
+                            <li class="">
+                                <a href="login.html">
+                                    <i class='bx bx-log-out icon' ></i>
+                                    <span class="text nav-text">Logout</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="settings.html">
+                                    <i class='bx bx-cog icon'></i>
+                                    <span class="text nav-text">Settings</span>
+                                </a>
+                            </li>
+
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+
+                                    <span class="mode-text text">Dark mode</span>
+                            
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li> 
+                </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <!-- Page header title -->
+        <div class="text">Settings</div>
+    
+<!-- App Settings -->
+<div class="app-settings">
+    <h2>App Settings</h2>
+    <div class="setting-item">
+        <label for="videoPlayback">Video Playback:</label>
+        <select id="videoPlayback" class="setting-select">
+            <option value="automatic">Automatic</option>
+            <option value="wifiOnly">Wi-Fi Only</option>
+            <option value="saveData">Save Data</option>
+        </select>
+    </div>
+    <div class="setting-item">
+        <label for="videoQuality">Video Quality:</label>
+        <select id="videoQuality" class="setting-select">
+            <option value="low">Automatic</option>
+            <option value="medium">High</option>
+            <option value="high">Standard</option>
+        </select>
+    </div>
+</div>
+
+<div class="app-settings">
+    <h2>Account</h2>
+    <div class="setting-item">
+        <label for="deviceName">Device Name:</label>
+        <div id="deviceName" class="setting-text">EHY-Desktop</div>
+    </div>
+
+    <div class="setting-item">
+        <label for="email">Email:</label>
+        <div id="email" class="setting-text">UFH220014@umcced.edu.my</div>
+    </div>   
+
+    <div class="button-group">
+        <button class="account-btn view-plan-btn">View Plan</button>
+        <button class="account-btn manage-account-btn">Manage Account</button>
+        <button class="account-btn delete-account-btn">Delete Account</button>
+    </div>
+</div>
+
+<div class="app-settings">
+    <h2>Help</h2>
+    <ul>
+        <li>
+            <i class='bx bx-file icon'></i>
+            <a href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Statement</a>
+        </li>
+        <li>
+            <i class='bx bxs-check-shield icon' ></i>
+            <a href="https://en.wikipedia.org/wiki/Terms_of_service">Terms of Service</a>
+        </li>
+    </ul>
+</div>
+    </section>
+
+    <!-- JS scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
